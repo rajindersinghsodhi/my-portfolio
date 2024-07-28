@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "main": "rajindersodhiportfolio"
+  },
+  "targets": {
+    "rajindersodhiportfolio": {
+      "hosting": {
+        "myportfolio": [
+          "rajindersodhiportfolio"
+        ]
+      }
+    }
+  }
+}
