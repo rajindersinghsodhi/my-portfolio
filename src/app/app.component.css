@@ -4,16 +4,16 @@
 }
 
 #about{
-    height:120vh;
+    height:100%;
 }
 #experience-container{
-    height:135vh;
+    height:100%;
 }
 #projects-container{
-    height:200vh;
+    height:100%;
 }
 #contact-container{
-    height:50vh;
+    height:100%;
 }
 
 @media screen and (min-width: 640px){
@@ -25,10 +25,10 @@
         height:110vh;
     }
     #experience-container{
-        height:110vh;
+        height:100vh;
     }
     #projects-container{
-        height:110vh;
+        height:100vh;
     }
     #contact-container{
         height:80vh;
