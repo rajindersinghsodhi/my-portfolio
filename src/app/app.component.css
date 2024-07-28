@@ -3,9 +3,34 @@
     width: 7rem;
 }
 
+#about{
+    height:120vh;
+}
+#experience-container{
+    height:135vh;
+}
+#projects-container{
+    height:200vh;
+}
+#contact-container{
+    height:50vh;
+}
+
 @media screen and (min-width: 640px){
     #logo{
         height: 15rem;
         width: 15rem;
+    }
+    #about{
+        height:110vh;
+    }
+    #experience-container{
+        height:110vh;
+    }
+    #projects-container{
+        height:110vh;
+    }
+    #contact-container{
+        height:110vh;
     }
 }

@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between p-3 lg:px-8 fixed top-0 left-10 lg:left-0 lg:w-full w-10/12 bg-white border-b border-gray rounded-3xl m-auto" aria-label="Global">
+<nav class="flex items-center justify-between lg:p-3 lg:px-8 py-5 fixed top-0 left-5 lg:left-0 lg:w-full w-11/12 bg-white border-b border-gray rounded-3xl m-auto" aria-label="Global">
   <div class="hidden lg:flex lg:flex-1">
     <a href="#" class="-m-1.5 p-1.5">
       <span class="text-2xl">Rajinder Singh Sodhi</span>
@@ -15,8 +15,8 @@
 </nav>
 
 <!-- Home Section -->
-<section class="flex flex-col items-center justify-center">
-  <div class="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10" style="height: 100vh;">
+<section class="flex flex-col items-center justify-center" style="height: 100vh;">
+  <div class="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10" id="home-container">
     <div  class="flex justify-center">
       <img src="rajinder_image.jpeg" alt="" class="rounded-full" id="logo">
     </div>
@@ -42,12 +42,12 @@
 <!-- Home Section -->
 
 <!-- About Section  -->
-<section class="flex flex-col justify-evenly items-center" style="height: 100vh;" id="about">
-  <div class="flex justify-center mt-10">
+<section class="flex flex-col justify-evenly items-center" id="about">
+  <div class="flex justify-center">
     <h1 class="text-5xl font-semibold">About</h1>
   </div>
-  <div class="flex justify-start" style="width: 55vw;">
-    <p class="hidden lg:flex text-justify">I am a Software Engineer with a passion for exploring technology and its transformative impact. I am currently working as a Full Stack Developer at Humanli.ai. I completed my Bachelor of Engineering in Computer Science & Engineering from Chandigarh University in 2024. At Humanli.ai, I work extensively with Angular/React.js, Flask, and Firebase to build AI-powered web applications. My technical skills include Data Structures and Algorithms (Java) and Web Development (MERN/MEAN Stack). I continuously expand my technical expertise, and what I might lack in skills, I make up for with my determination to learn. Outside of my tech interests, I am a passionate football enthusiast.</p>
+  <div class="hidden lg:flex justify-start" style="width: 55vw;">
+    <p class="flex text-justify">I am a Software Engineer with a passion for exploring technology and its transformative impact. I am currently working as a Full Stack Developer at Humanli.ai. I completed my Bachelor of Engineering in Computer Science & Engineering from Chandigarh University in 2024. At Humanli.ai, I work extensively with Angular/React.js, Flask, and Firebase to build AI-powered web applications. My technical skills include Data Structures and Algorithms (Java) and Web Development (MERN/MEAN Stack). I continuously expand my technical expertise, and what I might lack in skills, I make up for with my determination to learn. Outside of my tech interests, I am a passionate football enthusiast.</p>
   </div>
   <div class="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
     <div class="flex flex-col items-center border border-neutral-400 rounded-3xl p-5 lg:w-1/2 w-10/12">
@@ -57,8 +57,8 @@
       </div>
       <div class="w-full flex flex-col justify-center items-center" style="height: 100%;">
         <div class="flex flex-col">
-          <div class="flex justify-between items-center px-5">
-            <span class="text-lg">Humanli.ai</span>
+          <div class="flex justify-between items-center lg:px-5">
+            <span class="lg:text-lg">Humanli.ai</span>
             <span class="ms-10 text-sm">15 April, 2024 - Present</span>
           </div>
           <div class="flex flex-wrap gap-3 p-5">
@@ -101,7 +101,7 @@
 
 <!-- Experienc Section  -->
 <section id="experience">
-  <div class="flex flex-col justify-evenly items-center" style="height: 100vh;">
+  <div class="flex flex-col justify-evenly items-center" id="experience-container">
     <div class="flex justify-center my-5">
       <h1 class="text-5xl font-semibold">Experience</h1>
     </div>
@@ -156,8 +156,8 @@
 <!-- Experience Section  -->
 
 <!-- Projects Section  -->
-  <section id="projects" class="lg:m-0 mt-48">
-  <div class="flex flex-col justify-evenly items-center">
+<section id="projects">
+  <div class="flex flex-col justify-evenly items-center" id="projects-container">
     <div class="flex justify-center my-5">
       <h1 class="text-5xl font-semibold">Projects</h1>
     </div>
@@ -226,7 +226,7 @@
   
 <!-- Contact Section  -->
 <section id="contactMe">
-  <div class="flex flex-col justify-center items-center gap-10" style="height: 100vh;">
+  <div class="flex flex-col justify-evenly items-center" id="contact-container">
     <div class="flex flex-col items-center justify-center">
       <span>Get in Touch</span>
       <h1 class="text-5xl font-semibold">Contact Me</h1>
