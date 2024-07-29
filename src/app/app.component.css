@@ -6,7 +6,7 @@
 #about{
     height:100%;
 }
-#experience-container{
+#skills-container{
     height:100%;
 }
 #projects-container{
@@ -24,7 +24,7 @@
     #about{
         height:110vh;
     }
-    #experience-container{
+    #skills-container{
         height:100vh;
     }
     #projects-container{
