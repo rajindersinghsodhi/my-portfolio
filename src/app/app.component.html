@@ -1,33 +1,44 @@
-<nav class="flex items-center justify-between lg:p-3 lg:px-8 py-5 fixed top-0 left-5 lg:left-0 lg:w-full w-11/12 bg-white border-b border-gray rounded-3xl m-auto" aria-label="Global">
+<nav class="flex items-center justify-between lg:p-3 lg:px-8 py-5 fixed top-0 left-5 lg:left-0 lg:w-full w-11/12 bg-white border-b border-gray rounded-3xl m-auto" [ngClass]="darkMode ? 'bg-black text-white' : '' " aria-label="Global">
   <div class="hidden lg:flex lg:flex-1">
     <a href="#" class="-m-1.5 p-1.5">
       <span class="text-2xl">Rajinder Singh Sodhi</span>
     </a>
   </div>
   <div class="lg:flex flex lg:justify-center justify-evenly lg:gap-x-12 w-full lg:w-6/12">
-    <a href="#about" class="text-lg leading-6 text-gray-900">About</a>
-    <a href="#skills" class="text-lg leading-6 text-gray-900">Technical Skills</a>
-    <a href="#projects" class="text-lg leading-6 text-gray-900">Projects</a>
+    <a href="#about" class="text-lg leading-6 text-gray-900"  [ngClass]="darkMode ? 'text-white' : ''">About</a>
+    <a href="#skills" class="text-lg leading-6 text-gray-900"  [ngClass]="darkMode ? 'text-white' : ''">Technical Skills</a>
+    <a href="#projects" class="text-lg leading-6 text-gray-900"  [ngClass]="darkMode ? 'text-white' : ''">Projects</a>
   </div> 
+  <div class="border-2 border-black p-1 rounded-xl cursor-pointer" (click)="toggleMode($event)"  [ngClass]="darkMode ? 'border-neutral-50' : ''">
+    <svg *ngIf="darkMode==true; else elseBlock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+    </svg> 
+    <ng-template #elseBlock>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+      </svg>
+      
+    </ng-template>   
+  </div>
   <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-    <a href="#contactMe" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3">Contact Me</a>
+    <a href="#contactMe" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Contact Me</a>
   </div>
 </nav>
 
 <!-- Home Section -->
-<section class="flex flex-col items-center justify-center" style="height: 100vh;">
+<section class="flex flex-col items-center justify-center" [ngClass]="darkMode ? 'bg-black' : ''" style="height: 100vh;">
   <div class="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10" id="home-container">
     <div  class="flex justify-center">
       <img src="rajinder_image.jpeg" alt="" class="rounded-full" id="logo">
     </div>
     <div class="flex flex-col items-center gap-7">
       <div class="flex flex-col items-center gap-2">
-          <span class="lg:text-lg">Hello, I am</span>
-          <span class="lg:text-4xl font-semibold lg:font-normal">Rajinder Singh Sodhi</span>
+          <span class="lg:text-lg" [ngClass]="darkMode ? 'text-white' : ''">Hello, I am</span>
+          <span class="lg:text-4xl font-semibold lg:font-normal" [ngClass]="darkMode ? 'text-white' : ''">Rajinder Singh Sodhi</span>
           <span class="lg:text-2xl font-bold" style="color: rgb(114, 111, 111);">Software Engineer</span>
       </div>
       <div class="flex items-center">
-        <a href="documents/resumeRajindersinghsodhi.pdf" id="downloadCV" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3" download>Download Resume</a>
+        <a href="documents/resumeRajindersinghsodhi.pdf" id="downloadCV" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3" download [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Download Resume</a>
         <!-- <button class="lg:w1/2">Download CV</button> -->
         <!-- <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3">Contact Info</button> -->
         <!-- <button class="lg:w1/2">Contact</button> -->
@@ -42,53 +53,53 @@
 <!-- Home Section -->
 
 <!-- About Section  -->
-<section class="flex flex-col justify-evenly items-center" id="about">
+<section class="flex flex-col justify-evenly items-center" id="about"  [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="flex justify-center  mt-20 mb-10 lg:m-0">
-    <h1 class="text-5xl font-semibold">About</h1>
+    <h1 class="text-5xl font-semibold"  [ngClass]="darkMode ? 'text-white' : ''">About</h1>
   </div>
   <div class="hidden lg:flex justify-start" style="width: 55vw;">
-    <p class="flex text-justify">I am a Software Engineer with a passion for exploring technology and its transformative impact. I am currently working as a Full Stack Developer at Humanli.ai. I work extensively with Angular/React.js, Flask, and Firebase to build Gen AI Web Applications.</p>
+    <p class="flex text-justify"  [ngClass]="darkMode ? 'text-white' : ''">I am a Software Engineer with a passion for exploring technology and its transformative impact. I am currently working as a Full Stack Developer at Humanli.ai. I work extensively with Angular/React.js, Flask, and Firebase to build Gen AI Web Applications.</p>
   </div>
   <div class="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
-    <div class="flex flex-col items-center border bg-white rounded-3xl p-5 lg:w-1/2 w-11/12">
+    <div class="flex flex-col items-center border bg-white rounded-3xl p-5 lg:w-1/2 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
       <div class="flex items-center gap-2 my-2 lg:m-0">
         <img src="experience-icon.png" alt="" style="height: 1.5rem;">
-        <h1 class="text-xl font-bold">Work Experience</h1>
+        <h1 class="text-xl font-bold"  [ngClass]="darkMode ? 'text-white' : ''">Work Experience</h1>
       </div>
       <div class="w-full flex flex-col justify-center items-center" style="height: 100%;">
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <span class="lg:text-lg">Humanli.ai</span>
-            <span class="ms-10 text-sm">15 April, 2024 - Present</span>
+            <span class="lg:text-lg" [ngClass]="darkMode ? 'text-white' : ''">Humanli.ai</span>
+            <span class="ms-10 text-sm" [ngClass]="darkMode ? 'text-white' : ''">15 April, 2024 - Present</span>
           </div>
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Angular</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Flask</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Firebase</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Gen Ai</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">GCP</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Angular</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Flask</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Gen Ai</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">GCP</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-col items-center border bg-white rounded-3xl p-5 lg:w-1/2 w-11/12">
+    <div class="flex flex-col items-center border bg-white rounded-3xl p-5 lg:w-1/2 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
       <div class="flex">
         <img src="education-icon.png" alt="" style="height: 2rem;" class="px-2">
-        <h1 class="text-xl font-bold">Education</h1>
+        <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Education</h1>
       </div>
       <div class="flex flex-col items-center">
-        <h1>BE Computer Science & Engineering</h1>
+        <h1 [ngClass]="darkMode ? 'text-white' : ''">BE Computer Science & Engineering</h1>
         <div class="flex flex-col mt-5">
           <div class="flex justify-center">
-            <span>Relevant course work</span>
+            <span [ngClass]="darkMode ? 'text-white' : ''">Relevant course work</span>
           </div>
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Data Structures & Algorithms</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Java</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Operating System</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">DBMS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Computer Networks</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Data Structures & Algorithms</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Java</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Operating System</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">DBMS</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Computer Networks</p>
           </div>
         </div>
       </div>
@@ -100,54 +111,54 @@
 <!-- About Section  -->
 
 <!-- Experienc Section  -->
-<section id="skills">
+<section id="skills" [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="flex flex-col justify-evenly items-center" id="skills-container">
     <div class="flex justify-center mt-20 mb-5 lg:m-0">
-      <h1 class="text-5xl font-semibold">Technical Skills</h1>
+      <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Technical Skills</h1>
     </div>
     <div class="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
-      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12">
-        <h1 class="text-xl">Frontend Development</h1>
+      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+        <h1 class="text-xl" [ngClass]="darkMode ? 'text-white' : ''">Frontend Development</h1>
         <div class="flex flex-col items-center">
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Angular</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Reactjs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">REST API's</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Bootstrap</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Tailwind CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Gen Ai</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Angular</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Reactjs</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">REST API's</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Bootstrap</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Tailwind CSS</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Gen Ai</p>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12">
-        <h1 class="text-xl">Backend Development</h1>
+      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+        <h1 class="text-xl" [ngClass]="darkMode ? 'text-white' : ''">Backend Development</h1>
         <div class="flex flex-col items-center">
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Expressjs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Nodejs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Python</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Flask</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Git</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Firebase</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">MongoDB</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Expressjs</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Nodejs</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Python</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Flask</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Git</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">MongoDB</p>
           </div>
         </div>
       </div>
-      <div class="flex flex-col  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12">
+      <div class="flex flex-col  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
         <div class="flex justify-center">
-          <h1 class="text-xl">Programming Languages</h1>
+          <h1 class="text-xl" [ngClass]="darkMode ? 'text-white' : ''">Programming Languages</h1>
         </div>
         <div class="flex flex-col items-center">
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Java</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">JavaScript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Typescript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Python</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Data Structures & Algorithms</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Java</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">JavaScript</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Typescript</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Python</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Data Structures & Algorithms</p>
           </div>
         </div>
       </div>
@@ -157,66 +168,66 @@
 <!-- Experience Section  -->
 
 <!-- Projects Section  -->
-<section id="projects">
+<section id="projects" [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="flex flex-col justify-evenly items-center" id="projects-container">
     <div class="flex justify-center my-5 mt-20 mb-5 lg:m-0">
-      <h1 class="text-5xl font-semibold">Projects</h1>
+      <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Projects</h1>
     </div>
     <div class="flex flex-col lg:flex-row justify-evenly lg:items-stretch items-center gap-10 mx-3">
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12">
-        <h1 class="text-xl font-bold">Convocraze</h1>
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+        <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Convocraze</h1>
         <div class="flex flex-col items-start">
-          <h1>Chating web app</h1>
+          <h1 [ngClass]="darkMode ? 'text-white' : ''">Chating web app</h1>
           <div class="mt-5">
-            <p class="text-justify">Developed a real-time chat web app with friend addition, user search, and text/photo messaging using HTML, CSS, Javascript, ReactJs, Firebase, and Material UI. 
+            <p class="text-justify" [ngClass]="darkMode ? 'text-white' : ''">Developed a real-time chat web app with friend addition, user search, and text/photo messaging using HTML, CSS, Javascript, ReactJs, Firebase, and Material UI. 
               Integrated Firebase for real-time data sync and user authentication. Implemented intuitive UI for seamless user experience.
               </p>
           </div>
           <div class="flex flex-wrap gap-3 mt-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">ReactJs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Firebase</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Material UI</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Firebase</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">ReactJs</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Material UI</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12">
-        <h1 class="text-xl font-bold">Disney Hotstar Clone</h1>
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+        <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Disney Hotstar Clone</h1>
         <div class="flex flex-col items-start">
-          <h1>Frontend clone of Disney Hotstar</h1>
+          <h1 [ngClass]="darkMode ? 'text-white' : ''">Frontend clone of Disney Hotstar</h1>
           <div class="mt-5">
-            <p class="text-justify">Build a Disney+ Hotstar clone with identical frontend design using HTML, CSS, JavaScript, ReactJs, and React libraries including Axios and React-Icons. Utilized TMDB API for fetching movies and TV shows data, ensuring seamless integration with the original website.                
+            <p class="text-justify" [ngClass]="darkMode ? 'text-white' : ''">Build a Disney+ Hotstar clone with identical frontend design using HTML, CSS, JavaScript, ReactJs, and React libraries including Axios and React-Icons. Utilized TMDB API for fetching movies and TV shows data, ensuring seamless integration with the original website.                
               </p>
           </div>
           <div class="flex flex-wrap gap-3 mt-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">ReactJs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Axios</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Material UI</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">TMDB API</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">ReactJs</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Axios</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Material UI</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">TMDB API</p>
           </div>
         </div>
       </div>
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12">
-        <h1 class="text-xl font-bold">Covid Management System</h1>
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+        <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Covid Management System</h1>
         <div class="flex flex-col items-start">
-          <h1>management of covid vaccination</h1>
+          <h1 [ngClass]="darkMode ? 'text-white' : ''">management of covid vaccination</h1>
           <div class="mt-5">
-            <p class="text-justify">Engineered and deployed a comprehensive COVID-19 testing data management website integrating user authentication, test data collection, and report tracking functionalities. Utilized HTML, CSS, ReactJs, and Firebase technologies to enhance data handling efficiency and user experience.                
+            <p class="text-justify" [ngClass]="darkMode ? 'text-white' : ''">Engineered and deployed a comprehensive COVID-19 testing data management website integrating user authentication, test data collection, and report tracking functionalities. Utilized HTML, CSS, ReactJs, and Firebase technologies to enhance data handling efficiency and user experience.                
               </p>
           </div>
           <div class="flex flex-wrap gap-3 mt-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">ReactJs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2" style="color: white;">Firebase</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">ReactJs</p>
+            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
           </div>
         </div>
       </div>
@@ -226,21 +237,21 @@
 <!-- Projects Section  -->
   
 <!-- Contact Section  -->
-<section id="contactMe">
+<section id="contactMe" [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="flex flex-col justify-evenly items-center" id="contact-container">
     <div class="flex flex-col items-center justify-center mt-20 mb-10 lg:m-0">
-      <span>Get in Touch</span>
-      <h1 class="text-5xl font-semibold">Contact Me</h1>
+      <span [ngClass]="darkMode ? 'text-white' : ''">Get in Touch</span>
+      <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Contact Me</h1>
     </div>
     <div class="flex justify-evenly gap-10 mx-3">
-      <div class="flex flex-col lg:flex-row items-center gap-10 bg-white border rounded-3xl p-5">
+      <div class="flex flex-col lg:flex-row items-center gap-10 bg-white border rounded-3xl p-5" [ngClass]="darkMode ? 'bg-black' : ''">
         <div class="flex items-center gap-3">
           <img src="email-icon.png" alt="" style="height:1.5rem;">
-          <span class="text-lg">rajindersodhi181&#64;gmail.com</span>
+          <span class="text-lg" [ngClass]="darkMode ? 'text-white' : ''">rajindersodhi181&#64;gmail.com</span>
         </div>
         <div class="flex items-center gap-3">
           <img src="linkedin-icon.png" alt="" style="height: 1.5rem; width: 1.5rem;">
-          <span class="text-lg">rajindersinghsodhi</span>
+          <span class="text-lg" [ngClass]="darkMode ? 'text-white' : ''">rajindersinghsodhi</span>
         </div>
       </div>
     </div>
@@ -248,12 +259,12 @@
 </section>
 <!-- Projects Section  -->
 
-<footer class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 mb-10" aria-label="Global">
+<footer class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 mb-10" aria-label="Global" [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="lg:flex flex lg:justify-center justify-evenly lg:gap-x-12 w-full lg:w-6/12">
-    <a href="#about" class="text-lg leading-6 text-gray-900">About</a>
-    <a href="#experience" class="text-lg leading-6 text-gray-900">Experience</a>
-    <a href="#projects" class="text-lg leading-6 text-gray-900">Projects</a>
+    <a href="#about" class="text-lg leading-6 text-gray-900" [ngClass]="darkMode ? 'text-white' : ''">About</a>
+    <a href="#experience" class="text-lg leading-6 text-gray-900" [ngClass]="darkMode ? 'text-white' : ''">Experience</a>
+    <a href="#projects" class="text-lg leading-6 text-gray-900" [ngClass]="darkMode ? 'text-white' : ''">Projects</a>
   </div>
 </footer>
 
-<router-outlet />
+<router-outlet/>
