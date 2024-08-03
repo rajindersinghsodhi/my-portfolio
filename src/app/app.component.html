@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between lg:p-3 lg:px-8 py-5 fixed top-0 left-5 lg:left-0 lg:w-full w-11/12 bg-white border-b border-gray rounded-3xl m-auto" [ngClass]="darkMode ? 'bg-black text-white' : '' " aria-label="Global">
+<nav class="flex items-center justify-between lg:p-3 lg:px-8 py-5 fixed top-0 left-5 lg:left-0 lg:w-full w-11/12 border-b border-gray rounded-3xl m-auto" [ngClass]="darkMode ? 'bg-black text-white': ' bg-white ' " aria-label="Global">
   <div class="hidden lg:flex lg:flex-1">
     <a href="#" class="-m-1.5 p-1.5">
       <span class="text-2xl">Rajinder Singh Sodhi</span>
@@ -8,7 +8,7 @@
     <a href="#about" class="text-lg leading-6 text-gray-900"  [ngClass]="darkMode ? 'text-white' : ''">About</a>
     <a href="#skills" class="text-lg leading-6 text-gray-900"  [ngClass]="darkMode ? 'text-white' : ''">Technical Skills</a>
     <a href="#projects" class="text-lg leading-6 text-gray-900"  [ngClass]="darkMode ? 'text-white' : ''">Projects</a>
-    <div class="border-2 border-black p-1 rounded-xl cursor-pointer" (click)="toggleMode($event)"  [ngClass]="darkMode ? 'border-neutral-50' : ''">
+    <div class="border-2 p-1 rounded-xl cursor-pointer" (click)="toggleMode($event)"  [ngClass]="darkMode ? 'border-neutral-50' : 'border-black'">
       <svg *ngIf="darkMode==true; else darkIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
       </svg> 
@@ -20,12 +20,12 @@
     </div>
   </div>
   <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-    <a href="#contactMe" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3"  [ngClass]="darkMode ? 'dark:bg-white dark:hover:bg-white text-black' : ''">Contact Me</a>
+    <a href="#contactMe" class="focus:outline-none font-medium rounded-full text-sm px-5 me-2 mb-2 py-3"  [ngClass]="darkMode ? 'bg-white text-black' : 'text-white bg-black'">Contact Me</a>
   </div>
 </nav>
 
 <!-- Home Section -->
-<section class="flex flex-col items-center justify-center" [ngClass]="darkMode ? 'bg-black' : ''" style="height: 100vh;">
+<section class="flex flex-col items-center justify-center" [ngClass]="darkMode ? 'dark:bg-black' : ''" style="height: 100vh;">
   <div class="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10" id="home-container">
     <div  class="flex justify-center">
       <img src="rajinder_image.jpeg" alt="" class="rounded-full border-2 border-black" id="logo" [ngClass]="darkMode ? 'border-4 border-neutral-100': ''">
@@ -37,7 +37,7 @@
           <span class="lg:text-2xl font-bold" style="color: rgb(114, 111, 111);">Software Engineer</span>
       </div>
       <div class="flex items-center">
-        <a href="documents/resumeRajindersinghsodhi.pdf" id="downloadCV" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3" download [ngClass]="darkMode ? 'dark:bg-white text-black dark:hover:bg-white' : ''">Download Resume</a>
+        <a href="documents/resumeRajindersinghsodhi.pdf" id="downloadCV" class="focus:outline-none font-medium rounded-full text-sm px-5 me-2 mb-2 py-3"  [ngClass]="darkMode ? 'bg-white text-black' : 'text-white bg-black'" download>Download Resume</a>
         <!-- <button class="lg:w1/2">Download CV</button> -->
         <!-- <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 py-3">Contact Info</button> -->
         <!-- <button class="lg:w1/2">Contact</button> -->
@@ -58,7 +58,7 @@
 <!-- Home Section -->
 
 <!-- About Section  -->
-<section class="flex flex-col justify-evenly items-center" id="about"  [ngClass]="darkMode ? 'bg-black' : ''">
+<section class="flex flex-col justify-evenly items-center" id="about"  [ngClass]="darkMode ? 'dark:bg-black' : ''">
   <div class="flex justify-center  mt-20 mb-10 lg:m-0">
     <h1 class="text-5xl font-semibold"  [ngClass]="darkMode ? 'text-white' : ''">About</h1>
   </div>
@@ -66,7 +66,7 @@
     <p class="flex text-justify"  [ngClass]="darkMode ? 'text-white' : ''">I am a Software Engineer with a passion for exploring technology and its transformative impact. I am currently working as a Full Stack Developer at Humanli.ai. I work extensively with Angular/React.js, Flask, and Firebase to build Gen AI Web Applications.</p>
   </div>
   <div class="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
-    <div class="flex flex-col items-center border bg-white rounded-3xl p-5 lg:w-1/2 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+    <div class="flex flex-col items-center border rounded-3xl p-5 lg:w-1/2 w-11/12" [ngClass]="darkMode ? 'bg-black' : ' bg-white'">
       <div class="flex items-center gap-2 my-2 lg:m-0">
         <img *ngIf="!darkMode; else darkExperience" src="experience-icon.png" alt="" style="height: 1.5rem;">
         <ng-template #darkExperience>
@@ -81,17 +81,17 @@
             <span class="ms-10 text-sm" [ngClass]="darkMode ? 'text-white' : ''">15 April, 2024 - Present</span>
           </div>
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Angular</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Flask</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Gen Ai</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white"  [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">GCP</p>
+            <p class="border-black border rounded-md p-2"  [ngClass]="darkMode ? 'bg-white text-black' : ' text-white bg-slate-950'">Angular</p>
+            <p class="border-black border rounded-md p-2"  [ngClass]="darkMode ? 'bg-white text-black' : ' text-white bg-slate-950'">Flask</p>
+            <p class="border-black border rounded-md p-2"  [ngClass]="darkMode ? 'bg-white text-black' : ' text-white bg-slate-950'">Firebase</p>
+            <p class="border-black border rounded-md p-2"  [ngClass]="darkMode ? 'bg-white text-black' : ' text-white bg-slate-950'">Gen Ai</p>
+            <p class="border-black border rounded-md p-2"  [ngClass]="darkMode ? 'bg-white text-black' : ' text-white bg-slate-950'">GCP</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-col items-center border bg-white rounded-3xl p-5 lg:w-1/2 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+    <div class="flex flex-col items-center border rounded-3xl p-5 lg:w-1/2 w-11/12" [ngClass]="darkMode ? 'bg-black' : ' bg-white'">
       <div class="flex">
         <img *ngIf="!darkMode; else darkEducation" src="education-icon.png" alt="" style="height: 2rem;" class="px-2">
         <ng-template #darkEducation>
@@ -106,11 +106,11 @@
             <span [ngClass]="darkMode ? 'text-white' : ''">Relevant course work</span>
           </div>
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Data Structures & Algorithms</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Java</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Operating System</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">DBMS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Computer Networks</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Data Structures & Algorithms</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Java</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Operating System</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">DBMS</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Computer Networks</p>
           </div>
         </div>
       </div>
@@ -122,54 +122,54 @@
 <!-- About Section  -->
 
 <!-- Experienc Section  -->
-<section id="skills" [ngClass]="darkMode ? 'bg-black' : ''">
+<section id="skills" [ngClass]="darkMode ? 'dark:bg-black' : ''">
   <div class="flex flex-col justify-evenly items-center" id="skills-container">
     <div class="flex justify-center mt-20 mb-5 lg:m-0">
       <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Technical Skills</h1>
     </div>
     <div class="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
-      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
         <h1 class="text-xl" [ngClass]="darkMode ? 'text-white' : ''">Frontend Development</h1>
         <div class="flex flex-col items-center">
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Angular</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Reactjs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">REST API's</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Bootstrap</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Tailwind CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Gen Ai</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">HTML</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">CSS</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Javascript</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Angular</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Reactjs</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">REST API's</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Bootstrap</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Tailwind CSS</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Gen Ai</p>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+      <div class="flex flex-col items-center border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : 'bg-white'">
         <h1 class="text-xl" [ngClass]="darkMode ? 'text-white' : ''">Backend Development</h1>
         <div class="flex flex-col items-center">
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Expressjs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Nodejs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Python</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Flask</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Git</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">MongoDB</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Expressjs</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Nodejs</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Python</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Flask</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Git</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">Firebase</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'">MongoDB</p>
           </div>
         </div>
       </div>
-      <div class="flex flex-col  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+      <div class="flex flex-col border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ' bg-white'">
         <div class="flex justify-center">
           <h1 class="text-xl" [ngClass]="darkMode ? 'text-white' : ''">Programming Languages</h1>
         </div>
         <div class="flex flex-col items-center">
           <div class="flex flex-wrap gap-3 p-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Java</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">JavaScript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Typescript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Python</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Data Structures & Algorithms</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Java</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">JavaScript</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Typescript</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Python</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Data Structures & Algorithms</p>
           </div>
         </div>
       </div>
@@ -179,13 +179,13 @@
 <!-- Experience Section  -->
 
 <!-- Projects Section  -->
-<section id="projects" [ngClass]="darkMode ? 'bg-black' : ''">
+<section id="projects" [ngClass]="darkMode ? 'dark:bg-black' : ''">
   <div class="flex flex-col justify-evenly items-center" id="projects-container">
     <div class="flex justify-center my-5 mt-20 mb-5 lg:m-0">
       <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Projects</h1>
     </div>
     <div class="flex flex-col lg:flex-row justify-evenly lg:items-stretch items-center gap-10 mx-3">
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
         <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Convocraze</h1>
         <div class="flex flex-col items-start">
           <h1 [ngClass]="darkMode ? 'text-white' : ''">Chating web app</h1>
@@ -195,18 +195,18 @@
               </p>
           </div>
           <div class="flex flex-wrap gap-3 mt-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">ReactJs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Material UI</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">HTML</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">CSS</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Javascript</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">ReactJs</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Firebase</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Material UI</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Firebase</p>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
         <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Disney Hotstar Clone</h1>
         <div class="flex flex-col items-start">
           <h1 [ngClass]="darkMode ? 'text-white' : ''">Frontend clone of Disney Hotstar</h1>
@@ -215,17 +215,17 @@
               </p>
           </div>
           <div class="flex flex-wrap gap-3 mt-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">ReactJs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Axios</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Material UI</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">TMDB API</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">HTML</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">CSS</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Javascript</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">ReactJs</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Axios</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Material UI</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">TMDB API</p>
           </div>
         </div>
       </div>
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
         <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Covid Management System</h1>
         <div class="flex flex-col items-start">
           <h1 [ngClass]="darkMode ? 'text-white' : ''">management of covid vaccination</h1>
@@ -234,11 +234,11 @@
               </p>
           </div>
           <div class="flex flex-wrap gap-3 mt-5">
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">HTML</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">CSS</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Javascript</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">ReactJs</p>
-            <p class="border-black border rounded-md bg-slate-950 p-2 text-white" [ngClass]="darkMode ? 'dark:bg-white text-black' : ''">Firebase</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">HTML</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">CSS</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Javascript</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">ReactJs</p>
+            <p class="border-black border rounded-md p-2" [ngClass]="darkMode ? 'bg-white text-black' : 'bg-slate-950  text-white'">Firebase</p>
           </div>
         </div>
       </div>
@@ -255,7 +255,7 @@
       <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Contact Me</h1>
     </div>
     <div class="flex justify-evenly gap-10 mx-3">
-      <div class="flex flex-col lg:flex-row items-center gap-10 bg-white border rounded-3xl p-5" [ngClass]="darkMode ? 'bg-black' : ''">
+      <div class="flex flex-col lg:flex-row items-center gap-10 bg-white border rounded-3xl p-5" [ngClass]="darkMode ? 'dark:bg-black' : ''">
         <div class="flex items-center gap-3">
           <img *ngIf="!darkMode; else darkEmail" src="email-icon.png" alt="" style="height:1.5rem;">
           <ng-template #darkEmail>
@@ -276,7 +276,7 @@
 </section>
 <!-- Projects Section  -->
 
-<footer *ngIf="darkMode===false;" class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 mb-10" aria-label="Global" [ngClass]="darkMode ? 'bg-black' : ''">
+<footer *ngIf="darkMode===false;" class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 mb-10" aria-label="Global" [ngClass]="darkMode ? 'dark:bg-black' : ''">
   <div class="lg:flex flex lg:justify-center justify-evenly lg:gap-x-12 w-full lg:w-6/12">
     <a href="#about" class="text-lg leading-6 text-gray-900" [ngClass]="darkMode ? 'text-white' : ''">About</a>
     <a href="#experience" class="text-lg leading-6 text-gray-900" [ngClass]="darkMode ? 'text-white' : ''">Experience</a>
