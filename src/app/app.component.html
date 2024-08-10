@@ -25,7 +25,7 @@
 </nav>
 
 <!-- Home Section -->
-<section class="flex flex-col items-center justify-center" [ngClass]="darkMode ? 'dark:bg-black' : ''" style="height: 100vh;">
+<section class="flex flex-col items-center justify-center" [ngClass]="darkMode ? 'bg-black' : ''" style="height: 100vh;">
   <div class="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10" id="home-container">
     <div  class="flex justify-center">
       <img src="rajinder_image.jpeg" alt="" class="rounded-full border-2 border-black" id="logo" [ngClass]="darkMode ? 'border-4 border-neutral-100': ''">
@@ -58,7 +58,7 @@
 <!-- Home Section -->
 
 <!-- About Section  -->
-<section class="flex flex-col justify-evenly items-center" id="about"  [ngClass]="darkMode ? 'dark:bg-black' : ''">
+<section class="flex flex-col justify-evenly items-center" id="about"  [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="flex justify-center  mt-20 mb-10 lg:m-0">
     <h1 class="text-5xl font-semibold"  [ngClass]="darkMode ? 'text-white' : ''">About</h1>
   </div>
@@ -122,13 +122,13 @@
 <!-- About Section  -->
 
 <!-- Experienc Section  -->
-<section id="skills" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+<section id="skills" [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="flex flex-col justify-evenly items-center" id="skills-container">
     <div class="flex justify-center mt-20 mb-5 lg:m-0">
       <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Technical Skills</h1>
     </div>
     <div class="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
-      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+      <div class="flex flex-col items-center  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
         <h1 class="text-xl" [ngClass]="darkMode ? 'text-white' : ''">Frontend Development</h1>
         <div class="flex flex-col items-center">
           <div class="flex flex-wrap gap-3 p-5">
@@ -179,13 +179,13 @@
 <!-- Experience Section  -->
 
 <!-- Projects Section  -->
-<section id="projects" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+<section id="projects" [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="flex flex-col justify-evenly items-center" id="projects-container">
     <div class="flex justify-center my-5 mt-20 mb-5 lg:m-0">
       <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Projects</h1>
     </div>
     <div class="flex flex-col lg:flex-row justify-evenly lg:items-stretch items-center gap-10 mx-3">
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
         <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Convocraze</h1>
         <div class="flex flex-col items-start">
           <h1 [ngClass]="darkMode ? 'text-white' : ''">Chating web app</h1>
@@ -206,7 +206,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
         <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Disney Hotstar Clone</h1>
         <div class="flex flex-col items-start">
           <h1 [ngClass]="darkMode ? 'text-white' : ''">Frontend clone of Disney Hotstar</h1>
@@ -225,7 +225,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+      <div class="flex flex-col items-start  bg-white border rounded-3xl p-5 lg:w-1/3 w-11/12" [ngClass]="darkMode ? 'bg-black' : ''">
         <h1 class="text-xl font-bold" [ngClass]="darkMode ? 'text-white' : ''">Covid Management System</h1>
         <div class="flex flex-col items-start">
           <h1 [ngClass]="darkMode ? 'text-white' : ''">management of covid vaccination</h1>
@@ -255,7 +255,7 @@
       <h1 class="text-5xl font-semibold" [ngClass]="darkMode ? 'text-white' : ''">Contact Me</h1>
     </div>
     <div class="flex justify-evenly gap-10 mx-3">
-      <div class="flex flex-col lg:flex-row items-center gap-10 bg-white border rounded-3xl p-5" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+      <div class="flex flex-col lg:flex-row items-center gap-10 bg-white border rounded-3xl p-5" [ngClass]="darkMode ? 'bg-black' : ''">
         <div class="flex items-center gap-3">
           <img *ngIf="!darkMode; else darkEmail" src="email-icon.png" alt="" style="height:1.5rem;">
           <ng-template #darkEmail>
@@ -276,7 +276,7 @@
 </section>
 <!-- Projects Section  -->
 
-<footer *ngIf="darkMode===false;" class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 mb-10" aria-label="Global" [ngClass]="darkMode ? 'dark:bg-black' : ''">
+<footer *ngIf="darkMode===false;" class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 mb-10" aria-label="Global" [ngClass]="darkMode ? 'bg-black' : ''">
   <div class="lg:flex flex lg:justify-center justify-evenly lg:gap-x-12 w-full lg:w-6/12">
     <a href="#about" class="text-lg leading-6 text-gray-900" [ngClass]="darkMode ? 'text-white' : ''">About</a>
     <a href="#experience" class="text-lg leading-6 text-gray-900" [ngClass]="darkMode ? 'text-white' : ''">Experience</a>
