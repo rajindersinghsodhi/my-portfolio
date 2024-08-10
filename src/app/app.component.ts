@@ -12,11 +12,19 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   darkMode: boolean = false;
 
+  ngOnInit() {
+    if(localStorage.getItem("darkMode") === "true"){
+      this.darkMode = true;
+    }
+  }
+
   toggleMode = (event: Event) => {
     if(this.darkMode === true){
       this.darkMode = false;
+      localStorage.setItem("darkMode", "false");
     }else{
       this.darkMode = true;
+      localStorage.setItem("darkMode", "true");
     }
   }
 }
