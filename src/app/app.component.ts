@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, NgModule } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, NgModule, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -12,8 +12,12 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   darkMode: boolean = false;
 
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object
+  ){}
+
   ngOnInit() {
-    if(localStorage.getItem("darkMode") === "true"){
+    if(isPlatformBrowser(this.platformId) && localStorage.getItem("darkMode") === "true"){
       this.darkMode = true;
     }
   }
